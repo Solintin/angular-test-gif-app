@@ -2,9 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+.spinner {
+  width: 56px;
+  height: 56px;
+  border: 11px #fff double;
+  border-left-style: solid;
+  border-radius: 50%;
+  animation: spinner 0.75s infinite linear;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 * {
   background-color: #060b3d;
-  color : #fff;
-  padding: .5rem;
+
   font-family: "montserrat", sans-serif !important;
 }

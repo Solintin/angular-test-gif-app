@@ -1,10 +1,8 @@
 import { combineReducers } from "redux";
-import Rider from "./rider";
-import Loading from "./loading";
+import Giphy from "./giphy";
 
 const rootReducer = combineReducers({
-  loading: Loading,
-  rider : Rider,
+  giphy: Giphy,
 });
 
 export default rootReducer;
