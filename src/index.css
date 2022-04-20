@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  background-color: #060b3d;
+  color : #fff;
+  padding: .5rem;
+  font-family: "montserrat", sans-serif !important;
+}
