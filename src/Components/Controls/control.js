@@ -1,3 +1,4 @@
+//Controls for User to get more gif or less. 
 import React from 'react';
 
 const control = ( {list, handleDecreaseList, handleIncreaseList }) => {

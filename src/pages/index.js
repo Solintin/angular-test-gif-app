@@ -1,3 +1,5 @@
+// Home Page that render all gif and control Buttons
+
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import GifList from "../Components/View/GifList";
@@ -26,10 +28,10 @@ const Index = () => {
     setSearchQuery(value);
   };
 
-  const handleIncreaseList = () => {
+  const handleShowMore = () => {
     setList(list + 5);
   };
-  const handleDecreaseList = () => {
+  const handleShowLess = () => {
     setList(list - 5);
   };
 
@@ -59,8 +61,8 @@ const Index = () => {
           </div>
           <Control
             list={list}
-            handleDecreaseList={handleDecreaseList}
-            handleIncreaseList={handleIncreaseList}
+            handleDecreaseList={handleShowLess}
+            handleIncreaseList={handleShowMore}
           />
         </>
       ) : (

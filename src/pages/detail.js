@@ -1,3 +1,5 @@
+// This page render the Detail view of each gif
+
 import React from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -7,6 +9,8 @@ const Details = ({ match }) => {
   const history = useHistory();
   const { id } = match.params;
   const moreInfo = gifs.find((gif) => gif.id === id);
+
+
   return (
     <div>
       <div className="p-5  space-y-2">
