@@ -5,7 +5,7 @@ const GifList = ({ gif, id }) => {
   return (
     <div>
       {
-        <Link  className="m-2" data-testid={`image-${id}`}>
+        <Link to={`/${gif.id}`}  className="m-2" data-testid={`image-${id}`}>
           <img
             src={gif.images.fixed_height.url}
             className="h-56 w-full rounded"

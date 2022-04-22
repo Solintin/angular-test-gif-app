@@ -8,8 +8,6 @@ const App = () => {
   return (
     
     <div className="lg:p-5 p-3">
-     learn react
-
       <Router >
         <Switch>
           <Route exact path="/" component={Index} />

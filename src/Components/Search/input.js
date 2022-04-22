@@ -4,7 +4,6 @@ const input = ({ handleSearchQuery, handleSearch, searchQuery }) => {
   return (
     <div>
       <div className="flex">
-      learn react
         <input
           value={searchQuery}
           type="text"

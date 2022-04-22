@@ -3,10 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import GifList from "../Components/View/GifList";
 import Input from "../Components/Search/input";
 import { fetchGiphy } from "../Redux/Actions/ActionCreators";
+import Control from "../Components/Controls/control";
+
 const Index = () => {
   const dispatch = useDispatch();
   const { gifs, loading } = useSelector((state) => state.giphy);
   const [searchQuery, setSearchQuery] = useState("");
+  const [list, setList] = useState(5);
 
   const handleSearch = () => {
     dispatch(fetchGiphy(searchQuery));
@@ -21,6 +24,13 @@ const Index = () => {
     }
 
     setSearchQuery(value);
+  };
+
+  const handleIncreaseList = () => {
+    setList(list + 5);
+  };
+  const handleDecreaseList = () => {
+    setList(list - 5);
   };
 
   return (
@@ -41,11 +51,18 @@ const Index = () => {
           <p>Loading...</p>
         </div>
       ) : gifs.length > 0 ? (
-        <div className=" mx-auto mt-4 text-white grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-6">
-          {gifs.map((gif, i) => (
-            <GifList gif={gif} id={i} key={i} />
-          ))}
-        </div>
+        <>
+          <div className=" mx-auto mt-4 text-white grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-6">
+            {gifs.slice(0, list).map((gif, i) => (
+              <GifList gif={gif} id={i} key={i} />
+            ))}
+          </div>
+          <Control
+            list={list}
+            handleDecreaseList={handleDecreaseList}
+            handleIncreaseList={handleIncreaseList}
+          />
+        </>
       ) : (
         <div className="mt-20 text-white text-center">
           <p>No Gif Available</p>
